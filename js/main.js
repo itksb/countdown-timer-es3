@@ -59,6 +59,9 @@
                 minutes: ts.minutes.toString().length > 1 ? ts.minutes : '0' + ts.minutes.toString(),
                 seconds: ts.seconds.toString().length > 1 ? ts.seconds : '0' + ts.seconds.toString(),
             }
+        },
+        isArray: function (entity) {
+            return w.Object.prototype.toString.call(entity) === '[object Array]';
         }
     };
 
@@ -217,21 +220,31 @@
     }
 
     countDownPrototype._activatePromo = function () {
-        if (this._$activeContent) {
-            this._$activeContent.style.display = 'block';
+        var i = 0;
+        if (lib.isArray(this._$activeContent)) {
+            for (i = 0; i < this._$activeContent.length; i++) {
+                this._$activeContent[i].style.display = 'block';
+            }
         }
-        if (this._$finishedContent) {
-            this._$finishedContent.style.display = 'none';
+        if (lib.isArray(this._$finishedContent)) {
+            for (i = 0; i < this._$finishedContent.length; i++) {
+                this._$finishedContent[i].style.display = 'none';
+            }
         }
         return this;
     }
 
     countDownPrototype._desActivatePromo = function () {
-        if (this._$activeContent) {
-            this._$activeContent.style.display = 'none';
+        var i = 0;
+        if (lib.isArray(this._$activeContent)) {
+            for (i = 0; i < this._$activeContent.length; i++) {
+                this._$activeContent[i].style.display = 'none';
+            }
         }
-        if (this._$finishedContent) {
-            this._$finishedContent.style.display = 'block';
+        if (lib.isArray(this._$finishedContent)) {
+            for (i = 0; i < this._$finishedContent.length; i++) {
+                this._$finishedContent[i].style.display = 'block';
+            }
         }
         return this;
     }

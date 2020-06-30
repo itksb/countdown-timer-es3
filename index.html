@@ -41,8 +41,12 @@
             $hours: document.querySelector('.countdown-timer .hours'),
             $minutes: document.querySelector('.countdown-timer .minutes'),
             $seconds: document.querySelector('.countdown-timer .seconds'),
-            $activeContent: document.querySelector('.countdown-timer__active-content'),
-            $finishedContent: document.querySelector('.countdown-timer__finished-content'),
+            $activeContent: [
+                document.querySelector('.countdown-timer__active-content')
+            ],
+            $finishedContent: [
+                document.querySelector('.countdown-timer__finished-content')
+            ],
             activePeriodSeconds: 0.5 * 60
         });
     })();
