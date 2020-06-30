@@ -1,0 +1,14 @@
+{
+  "name": "countdown-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "terser --verbose -c passes=2 -m  reserved=[countdownNamespace,run,activePeriodSeconds,$days,$hours,$minutes,$seconds,$activeContent,$finishedContent] --mangle-props regex=/_/ -o js/main.min.js js/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "terser": "^4.8.0"
+  }
+}

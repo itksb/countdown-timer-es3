@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<div class="countdown-timer">
+    <span class="days">00</span> д.
+    <span class="hours">00</span> ч.
+    <span class="minutes">00</span> м.
+    <span class="seconds">00</span> с.
+</div>
+
+<section class="promo">
+    <article class="with-discount countdown-timer__active-content">
+        <h3>Получи супер скидку!</h3>
+        <button>Кнопка продажи со скидкой</button>
+    </article>
+    <article class="no-discount countdown-timer__finished-content">
+        <h3>Не успел на скидку, повезет в другой раз</h3>
+        <button>Кнопка продажи БЕЗ скидки</button>
+    </article>
+</section>
+
+<script src="js/main.min.js"></script>
+<script>
+
+    (function () {
+        countdownNamespace.run({
+            $days: document.querySelector('.countdown-timer .days'),
+            $hours: document.querySelector('.countdown-timer .hours'),
+            $minutes: document.querySelector('.countdown-timer .minutes'),
+            $seconds: document.querySelector('.countdown-timer .seconds'),
+            $activeContent: document.querySelector('.countdown-timer__active-content'),
+            $finishedContent: document.querySelector('.countdown-timer__finished-content'),
+            activePeriodSeconds: 0.5 * 60
+        });
+    })();
+</script>
+
+</body>
+
+</html>
